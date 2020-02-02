@@ -9,12 +9,10 @@ import lombok.extern.log4j.Log4j;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.in;
 
 @Log4j
 public class DatabaseSteps {
@@ -68,6 +66,14 @@ public class DatabaseSteps {
         String insertQuery = sqlQueryCatalog.insertNewEntity(tableDB, newValues);
         log.info(insertQuery);
 
+        Statement statement = sqlHelper.createStatement();
+        statement.executeUpdate(insertQuery);
+    }
+
+    @And("I delete from '(.*)' table newly created entity with '(.*)' name")
+    public void iUpdateTableInDBWithNewAgent(String tableDB, String name) throws Exception {
+        String insertQuery = sqlQueryCatalog.deleteNewEntityByAgentName(tableDB, name);
+        log.info(insertQuery);
         Statement statement = sqlHelper.createStatement();
         statement.executeUpdate(insertQuery);
     }

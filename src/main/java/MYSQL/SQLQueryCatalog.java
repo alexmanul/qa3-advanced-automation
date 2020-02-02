@@ -25,4 +25,8 @@ public class SQLQueryCatalog {
         return "INSERT INTO " + tableDB + " VALUES (" + values + ")";
     }
 
+    public String deleteNewEntityByAgentName(String tableDB, String name) {
+        return "DELETE FROM " + tableDB + " WHERE AGENT_NAME = '" + name + "'";
+    }
+
 }

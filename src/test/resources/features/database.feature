@@ -30,10 +30,11 @@ Feature: QA3 - Advanced Automation. Database
 	  | COMMISSION   | 0.75         |
 	  | PHONE_NO     | 778-32556178 |
 	  | COUNTRY      | LATVIA       |
+	And I delete from 'AGENTS' table newly created entity with 'Test' name
 
 #  Create a test where we update Agent – Mukesh. Change that he is from Bangladesh and his PhoneNumber is 777-11111111
   Scenario: 03. Add and remove data - change agent data
-	When I verify 'AGENTS' table entity with 'Lucida' agent name contains values
+	When I verify 'AGENTS' table entity with 'Mukesh' agent name contains values
 	  | TABLE_KEY    | NEW_VALUE    |
 	  | AGENT_CODE   | A002         |
 	  | AGENT_NAME   | Mukesh       |
