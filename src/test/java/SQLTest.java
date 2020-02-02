@@ -70,13 +70,14 @@ public class SQLTest {
 
     @Test
     public void test2_2() throws SQLException {
-        String updateQuery = "UPDATE AGENTS SET WORKING_AREA = 'Bangladesh', PHONE_NO = '777-11111111' " +
-                "WHERE AGENT_NAME = 'Mukesh' AND AGENT_CODE = 'A002'";
+        String updateQuery =
+                "UPDATE AGENTS SET WORKING_AREA = 'Bangladesh', PHONE_NO = '777-11111111' WHERE AGENT_NAME = 'Mukesh'";
 
-        String revertQuery = "UPDATE AGENTS SET WORKING_AREA = 'Mumbai', PHONE_NO = '029-12358964' " +
-                "WHERE AGENT_NAME = 'Mukesh' AND AGENT_CODE = 'A002'";
+        String revertQuery =
+                "UPDATE AGENTS SET WORKING_AREA = 'Mumbai', PHONE_NO = '029-12358964' WHERE AGENT_NAME = 'Mukesh'";
 
         String findQuery = "SELECT * FROM qa3.agents WHERE agents.agent_name = 'Mukesh'";
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -94,4 +95,5 @@ public class SQLTest {
         stmt.executeUpdate(revertQuery);
         con.close();
     }
+
 }
