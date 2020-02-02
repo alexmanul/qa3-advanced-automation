@@ -17,7 +17,7 @@ public class SQLTest {
      */
     @Test
     public void test1() throws SQLException {
-        String query = "SELECT * FROM qa3.agents WHERE agents.agent_name = 'Lucida'";
+        String query = "SELECT * FROM AGENTS WHERE AGENTS.AGENT_NAME = 'Lucida'";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -45,7 +45,8 @@ public class SQLTest {
     @Test
     public void test2_1() throws SQLException {
         String insertQuery = "INSERT INTO AGENTS VALUES ('A013', 'Test', 'Riga', '0.66', '778-32556178', 'Latvia');";
-        String findQuery = "SELECT * FROM qa3.agents WHERE agents.agent_name = 'Test'";
+        String revertQuery = "DELETE FROM AGENTS where AGENT_CODE = 'A013';";
+        String findQuery = "SELECT * FROM AGENTS WHERE AGENTS.AGENT_NAME = 'Test'";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -62,6 +63,8 @@ public class SQLTest {
         assertThat(resultSet.getString(2)).isEqualTo("Test");
         assertThat(resultSet.getString(3)).isEqualTo("Riga");
         assertThat(resultSet.getString(5)).isEqualTo("778-32556178");
+
+        stmt.executeUpdate(revertQuery);
         con.close();
     }
 
@@ -69,6 +72,10 @@ public class SQLTest {
     public void test2_2() throws SQLException {
         String updateQuery = "UPDATE AGENTS SET WORKING_AREA = 'Bangladesh', PHONE_NO = '777-11111111' " +
                 "WHERE AGENT_NAME = 'Mukesh' AND AGENT_CODE = 'A002'";
+
+        String revertQuery = "UPDATE AGENTS SET WORKING_AREA = 'Mumbai', PHONE_NO = '029-12358964' " +
+                "WHERE AGENT_NAME = 'Mukesh' AND AGENT_CODE = 'A002'";
+
         String findQuery = "SELECT * FROM qa3.agents WHERE agents.agent_name = 'Mukesh'";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -84,6 +91,7 @@ public class SQLTest {
 
         assertThat(resultSet.getString(3)).isEqualTo("Bangladesh");
         assertThat(resultSet.getString(5)).isEqualTo("777-11111111");
+        stmt.executeUpdate(revertQuery);
         con.close();
     }
 }
