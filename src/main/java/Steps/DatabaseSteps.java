@@ -22,33 +22,30 @@ public class DatabaseSteps {
     @And("I verify '(.*)' table entity with '(.*)' agent name contains values")
     public void iVerifyTableInDBContainsExpectedValues(String tableDB, String name, DataTable table) throws Exception {
         List<Map<String, String>> data = table.asMaps(String.class, String.class);
-        int i = 0;
         String findQuery = sqlQueryCatalog.findAllByAgentName(tableDB, name);
         Statement statement = sqlHelper.createStatement();
-        log.debug(findQuery);
+        log.info(findQuery);
         ResultSet resultSet = statement.executeQuery(findQuery);
         resultSet.next();
 
         for (Map<String, String> row : data) {
-            String key = data.get(i).get("TABLE_KEY");
-            String newValue = data.get(i).get("NEW_VALUE");
+            String key = row.get("TABLE_KEY");
+            String newValue = row.get("NEW_VALUE");
             assertThat(resultSet.getString(key)).isEqualTo(newValue);
-            i++;
+
         }
     }
 
     @And("I update '(.*)' table entity with '(.*)' agent name with new values")
     public void iUpdateTableInDBWith(String tableDB, String name, DataTable table) throws Exception {
         List<Map<String, String>> data = table.asMaps(String.class, String.class);
-        int i = 0;
         for (Map<String, String> row : data) {
-            String key = data.get(i).get("TABLE_KEY");
-            String newValue = data.get(i).get("NEW_VALUE");
+            String key = row.get("TABLE_KEY");
+            String newValue = row.get("NEW_VALUE");
             String updateQuery = sqlQueryCatalog.updateAgentsByAgentName(tableDB, key, newValue, name);
-
+            log.info(updateQuery);
             Statement statement = sqlHelper.createStatement();
             statement.executeUpdate(updateQuery);
-            i++;
         }
     }
 
