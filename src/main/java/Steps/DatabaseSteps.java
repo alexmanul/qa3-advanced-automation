@@ -8,10 +8,13 @@ import lombok.extern.log4j.Log4j;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.in;
 
 @Log4j
 public class DatabaseSteps {
@@ -32,12 +35,11 @@ public class DatabaseSteps {
             String key = row.get("TABLE_KEY");
             String newValue = row.get("NEW_VALUE");
             assertThat(resultSet.getString(key)).isEqualTo(newValue);
-
         }
     }
 
     @And("I update '(.*)' table entity with '(.*)' agent name with new values")
-    public void iUpdateTableInDBWith(String tableDB, String name, DataTable table) throws Exception {
+    public void iUpdateTableInDBWithNewValues(String tableDB, String name, DataTable table) throws Exception {
         List<Map<String, String>> data = table.asMaps(String.class, String.class);
         for (Map<String, String> row : data) {
             String key = row.get("TABLE_KEY");
@@ -49,5 +51,24 @@ public class DatabaseSteps {
         }
     }
 
+    @And("I update '(.*)' table entity with '(.*)' agent name contains values")
+    public void iUpdateTableInDBWithNewAgent(String tableDB, String name, DataTable table) throws Exception {
+        List<Map<String, String>> data = table.asMaps(String.class, String.class);
+        List<String> newAgent = new ArrayList<>();
+        for (Map<String, String> row : data) {
+            String key = row.get("TABLE_KEY");
+            String value = row.get("NEW_VALUE");
+            newAgent.add("'" + value + "'");
+        }
 
+        String newValues = newAgent.toString()
+                .replace("[", "")
+                .replace("]", "");
+        log.info(newValues);
+        String insertQuery = sqlQueryCatalog.insertNewEntity(tableDB, newValues);
+        log.info(insertQuery);
+
+        Statement statement = sqlHelper.createStatement();
+        statement.executeUpdate(insertQuery);
+    }
 }

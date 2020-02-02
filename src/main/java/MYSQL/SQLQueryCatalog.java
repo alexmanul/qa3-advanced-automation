@@ -10,4 +10,19 @@ public class SQLQueryCatalog {
         return "SELECT * FROM " + tableDB + " WHERE AGENT_NAME = '" + name + "'";
     }
 
+    public String insertNewAgent(String tableDB, String agentCode, String agentName, String workingArea,
+                                 String commission, String phoneNo, String country) {
+        return "INSERT INTO " + tableDB + " VALUES (" +
+                "'" + agentCode + "', " +
+                "'" + agentName + "', " +
+                "'" + workingArea + "', " +
+                "'" + commission + "', " +
+                "'" + phoneNo + "', " +
+                "'" + country + "')";
+    }
+
+    public String insertNewEntity(String tableDB, String values) {
+        return "INSERT INTO " + tableDB + " VALUES (" + values + ")";
+    }
+
 }
