@@ -59,9 +59,7 @@ public class DatabaseSteps {
             newAgent.add("'" + value + "'");
         }
 
-        String newValues = newAgent.toString()
-                .replace("[", "")
-                .replace("]", "");
+        String newValues = newAgent.toString().replaceAll("[{}\\[\\]]", "");
         log.info(newValues);
         String insertQuery = sqlQueryCatalog.insertNewEntity(tableDB, newValues);
         log.info(insertQuery);
