@@ -4,12 +4,14 @@ import MYSQL.SQLHelper;
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import lombok.extern.log4j.Log4j;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+@Log4j
 @CucumberOptions(glue = {"cucumber.hook", "cucumber.steps"})
 public class Hooks {
     SQLHelper sqlHelper = new SQLHelper();
@@ -39,11 +41,13 @@ public class Hooks {
         Connection connection = sqlHelper.createConnection();
         Statement statement = connection.createStatement();
         statement.executeUpdate(query);
+        log.info("Database is dropped");
         connection.close();
     }
 
     @Before("@CreateDBTableAgents")
     public void createDBTableAgents() throws IOException, SQLException {
         sqlHelper.readSQLFromFile();
+        log.info("Database table 'AGENTS' is created");
     }
 }
