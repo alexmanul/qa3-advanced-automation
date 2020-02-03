@@ -1,5 +1,6 @@
 package MYSQL;
 
+import Utils.TestProperties;
 import lombok.extern.log4j.Log4j;
 import org.apache.ibatis.jdbc.ScriptRunner;
 
@@ -52,7 +53,8 @@ public class SQLHelper {
 
     // READ SQL FROM FILE
     public void readSQLFromFile() throws SQLException, FileNotFoundException {
-        String fileName = "C:\\Users\\Manul\\IdeaProjects\\qa3-advanced-automation\\src\\test\\resources\\SQL\\SQL_CreateTableAgents.sql";
+        String fileName = TestProperties.getProperty("sql.create.table.agents");
+        log.info(fileName);
         Connection connection = createConnection();
         log.debug("Connection established...");
 
