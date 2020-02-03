@@ -2,10 +2,16 @@ package Steps;
 
 import MYSQL.SQLHelper;
 import MYSQL.SQLQueryCatalog;
+import Utils.TestProperties;
 import cucumber.api.java.en.And;
 import io.cucumber.datatable.DataTable;
 import lombok.extern.log4j.Log4j;
+import org.apache.ibatis.jdbc.ScriptRunner;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.Reader;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -70,5 +76,19 @@ public class DatabaseSteps {
     public void iUpdateTableInDBWithNewAgent(String tableDB, String name) throws Exception {
         String insertQuery = sqlQueryCatalog.deleteNewEntityByAgentName(tableDB, name);
         statement.executeUpdate(insertQuery);
+    }
+
+    @And("I create '(.*)' table in database")
+    public void iUpdateTableInDBWithNewAgent(String tableDB) throws Exception {
+        String fileName = TestProperties.getProperty("sql.create.table." + tableDB.toLowerCase() + "");
+        log.info(fileName);
+        Connection connection = sqlHelper.createConnection();
+        log.debug("Connection established...");
+
+        ScriptRunner sr = new ScriptRunner(connection);
+        Reader reader = new BufferedReader(new FileReader(fileName));
+
+        sr.runScript(reader);
+        sr.closeConnection();
     }
 }

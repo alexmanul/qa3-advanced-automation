@@ -2,6 +2,11 @@ Feature: QA3 - Advanced Automation. Database
 
 #  Task 1 – Simple validation
 #  Create a test where we find agent with name Lucida and assert all his data (Check his id, name, city, phone number)
+#
+#  Task 3 – Data setup
+#  Create @Before step - Create agents table and insert all data to it
+#  Create a test where we find agent with name Lucida and assert all his data (Check his id, name, city, phone number)
+#  Create @After step – Drop agents table
   @CreateDBTableAgents @DropDBTableAgents
   Scenario: 01. Simple data validation
 	When I verify 'AGENTS' table entity with 'Lucida' agent name contains values
