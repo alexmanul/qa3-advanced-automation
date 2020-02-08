@@ -3,6 +3,10 @@ Feature: QA3 - Advanced Automation. Database
 #  Task 1 – Simple validation
 #  Create a test where we find agent with name Lucida and assert all his data (Check his id, name, city, phone number)
 #
+#  Task 2 – Add/Remove data
+#  Create a test where we insert Agent – Test from Riga and PhoneNumber - 778-32556178
+#  Create a test where we update Agent – Mukesh. Change that he is from Bangladesh and his PhoneNumber is 777-11111111
+#
 #  Task 3 – Data setup
 #  Create @Before step - Create agents table and insert all data to it
 #  Create a test where we find agent with name Lucida and assert all his data (Check his id, name, city, phone number)
@@ -17,8 +21,6 @@ Feature: QA3 - Advanced Automation. Database
 	  | COMMISSION   | 0.12         |
 	  | PHONE_NO     | 044-52981425 |
 
-#  Task 2 – Add/Remove data
-#  Create a test where we insert Agent – Test from Riga and PhoneNumber - 778-32556178
   @CreateDBTableAgents @DropDBTableAgents
   Scenario: 02. Add and remove data - insert new agent
 	When I update 'AGENTS' table entity with 'Test' agent name contains values
@@ -38,7 +40,6 @@ Feature: QA3 - Advanced Automation. Database
 	  | PHONE_NO     | 778-32556178 |
 	  | COUNTRY      | LATVIA       |
 
-#  Create a test where we update Agent – Mukesh. Change that he is from Bangladesh and his PhoneNumber is 777-11111111
   @CreateDBTableAgents @DropDBTableAgents
   Scenario: 03. Add and remove data - change agent data
 	When I update 'AGENTS' table entity with 'Mukesh' agent name with new values
