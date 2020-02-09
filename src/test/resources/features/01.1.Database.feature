@@ -1,3 +1,4 @@
+@DB
 Feature: QA3 - Advanced Automation. Database
 
 #  Task 1 – Simple validation
@@ -12,7 +13,7 @@ Feature: QA3 - Advanced Automation. Database
 #  Create a test where we find agent with name Lucida and assert all his data (Check his id, name, city, phone number)
 #  Create @After step – Drop agents table
   @CreateDBTableAgents @DropDBTableAgents
-  Scenario: 01. Simple data validation
+  Scenario: DB01. Simple data validation
 	When I verify 'AGENTS' table entity with 'Lucida' agent name contains values
 	  | TABLE_KEY    | NEW_VALUE    |
 	  | AGENT_CODE   | A012         |
@@ -22,7 +23,7 @@ Feature: QA3 - Advanced Automation. Database
 	  | PHONE_NO     | 044-52981425 |
 
   @CreateDBTableAgents @DropDBTableAgents
-  Scenario: 02. Add and remove data - insert new agent
+  Scenario: DB02. Add and remove data - insert new agent
 	When I update 'AGENTS' table entity with 'Test' agent name contains values
 	  | TABLE_KEY    | NEW_VALUE    |
 	  | AGENT_CODE   | A013         |
@@ -41,7 +42,7 @@ Feature: QA3 - Advanced Automation. Database
 	  | COUNTRY      | LATVIA       |
 
   @CreateDBTableAgents @DropDBTableAgents
-  Scenario: 03. Add and remove data - change agent data
+  Scenario: DB03. Add and remove data - change agent data
 	When I update 'AGENTS' table entity with 'Mukesh' agent name with new values
 	  | TABLE_KEY    | NEW_VALUE    |
 	  | WORKING_AREA | Bangladesh   |
