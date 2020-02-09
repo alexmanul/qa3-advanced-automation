@@ -1,13 +1,36 @@
+import MYSQL.SQLHelper;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import lombok.extern.log4j.Log4j;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.sql.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Log4j
 public class SQLTest {
 
     String user = "test_user";
     String password = "123456";
+    SQLHelper sqlHelper = new SQLHelper();
+
+    @Before
+    public void createDBTableAgents() throws IOException, SQLException {
+        sqlHelper.readSQLFromFile();
+        log.info("Database table 'AGENTS' is created");
+    }
+
+    @After
+    public void dropDBTableAgents() throws IOException, SQLException {
+        String query = "DROP TABLE AGENTS";
+        Connection connection = sqlHelper.createConnection();
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(query);
+        log.info("Database is dropped");
+        connection.close();
+    }
 
     /**
      * Task 1 – Simple validation
@@ -16,7 +39,7 @@ public class SQLTest {
      * Can be done through assert or SoftAsserts
      */
     @Test
-    public void test1() throws SQLException {
+    public void TEST_DB_01() throws SQLException {
         String query = "SELECT * FROM AGENTS WHERE AGENTS.AGENT_NAME = 'Lucida'";
 
         try {
@@ -43,7 +66,7 @@ public class SQLTest {
      * Create a test where we update Agent – Mukesh. Change that he is from Bangladesh and PhoneNumber - 777-11111111
      */
     @Test
-    public void test2_1() throws SQLException {
+    public void TEST_DB_02() throws SQLException {
         String insertQuery = "INSERT INTO AGENTS VALUES ('A013', 'Test', 'Riga', '0.66', '778-32556178', 'Latvia');";
         String revertQuery = "DELETE FROM AGENTS where AGENT_CODE = 'A013';";
         String findQuery = "SELECT * FROM AGENTS WHERE AGENTS.AGENT_NAME = 'Test'";
@@ -69,7 +92,7 @@ public class SQLTest {
     }
 
     @Test
-    public void test2_2() throws SQLException {
+    public void TEST_DB_03() throws SQLException {
         String updateQuery =
                 "UPDATE AGENTS SET WORKING_AREA = 'Bangladesh', PHONE_NO = '777-11111111' WHERE AGENT_NAME = 'Mukesh'";
 

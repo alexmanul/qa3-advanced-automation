@@ -18,7 +18,7 @@ public class DeckTest {
     Response shuffleResponse = get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1");
 
     @Test
-    public void testFirst() {
+    public void TEST_REST_01() {
         shuffleResponse.then()
                 .assertThat()
                 .statusCode(200)
@@ -29,7 +29,7 @@ public class DeckTest {
     }
 
     @Test
-    public void secondTest() {
+    public void TEST_REST_02() {
         String deckID = shuffleResponse.jsonPath().getString("deck_id");
         String path = "https://deckofcardsapi.com/api/deck/" + deckID + "/draw/?count=1";
         log.info(path);
