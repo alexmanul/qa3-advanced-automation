@@ -9,7 +9,7 @@ import java.util.Properties;
 @Log4j
 public class TestProperties {
 
-    static String propertyFile = "test.properties";
+    static final String propertyFile = "test.properties";
 
     public static String getProperty(String property) {
         Properties properties = new Properties();

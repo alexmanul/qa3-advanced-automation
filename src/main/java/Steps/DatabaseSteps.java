@@ -24,9 +24,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Log4j
 public class DatabaseSteps {
 
-    SQLHelper sqlHelper = new SQLHelper();
-    SQLQueryCatalog sqlQueryCatalog = new SQLQueryCatalog();
-    Statement statement = sqlHelper.createStatement();
+    final SQLHelper sqlHelper = new SQLHelper();
+    final SQLQueryCatalog sqlQueryCatalog = new SQLQueryCatalog();
+    final Statement statement = sqlHelper.createStatement();
 
     public DatabaseSteps() throws SQLException {
     }

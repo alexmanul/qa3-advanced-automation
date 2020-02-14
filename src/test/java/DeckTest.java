@@ -15,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 @Log4j
 public class DeckTest {
 
-    Response shuffleResponse = get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1");
+    final Response shuffleResponse = get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1");
 
     @Test
     public void TEST_REST_01() {

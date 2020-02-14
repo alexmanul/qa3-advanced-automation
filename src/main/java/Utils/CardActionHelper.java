@@ -22,7 +22,7 @@ public class CardActionHelper {
     private int drawnCardAmount;
     private ValidatableResponse json;
     private RequestSpecification request;
-    private String CARD_DECK_API = "https://deckofcardsapi.com/api/deck";
+    private final String CARD_DECK_API = "https://deckofcardsapi.com/api/deck";
 
     public void shuffleDeck() {
         response = given().get(CARD_DECK_API + "/new/shuffle/?deck_count=1");

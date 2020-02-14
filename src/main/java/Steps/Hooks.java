@@ -14,7 +14,7 @@ import java.sql.Statement;
 @Log4j
 @CucumberOptions(glue = {"cucumber.hook", "cucumber.steps"})
 public class Hooks {
-    SQLHelper sqlHelper = new SQLHelper();
+    final SQLHelper sqlHelper = new SQLHelper();
 
     // ToDo: Draft version
     public static boolean restoreDB(String dbName, String dbUserName, String dbPassword, String source) throws IOException, InterruptedException {

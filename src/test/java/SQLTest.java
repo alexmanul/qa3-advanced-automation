@@ -12,9 +12,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Log4j
 public class SQLTest {
 
-    String user = "test_user";
-    String password = "123456";
-    SQLHelper sqlHelper = new SQLHelper();
+    final String user = "test_user";
+    final String password = "123456";
+    final SQLHelper sqlHelper = new SQLHelper();
 
     @BeforeEach
     public void createDBTableAgents() throws IOException, SQLException {
