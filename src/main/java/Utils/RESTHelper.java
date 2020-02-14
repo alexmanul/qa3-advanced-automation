@@ -2,11 +2,15 @@ package Utils;
 
 import org.apache.http.HttpResponse;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
 public class RESTHelper {
+
+    public RESTHelper() throws FileNotFoundException {
+    }
 
     public static String convertResponseToString(HttpResponse response) throws IOException {
         InputStream responseStream = response.getEntity().getContent();
@@ -15,4 +19,6 @@ public class RESTHelper {
         scanner.close();
         return responseString;
     }
+
+
 }
