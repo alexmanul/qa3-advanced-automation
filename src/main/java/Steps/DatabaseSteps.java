@@ -3,8 +3,8 @@ package Steps;
 import MYSQL.SQLHelper;
 import MYSQL.SQLQueryCatalog;
 import Utils.TestProperties;
-import cucumber.api.java.en.And;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import lombok.extern.log4j.Log4j;
 import org.apache.ibatis.jdbc.ScriptRunner;
 
