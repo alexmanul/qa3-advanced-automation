@@ -1,7 +1,7 @@
 import MYSQL.SQLHelper;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import lombok.extern.log4j.Log4j;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -16,13 +16,13 @@ public class SQLTest {
     String password = "123456";
     SQLHelper sqlHelper = new SQLHelper();
 
-    @Before
+    @BeforeEach
     public void createDBTableAgents() throws IOException, SQLException {
         sqlHelper.readSQLFromFile();
         log.info("Database table 'AGENTS' is created");
     }
 
-    @After
+    @AfterEach
     public void dropDBTableAgents() throws IOException, SQLException {
         String query = "DROP TABLE AGENTS";
         Connection connection = sqlHelper.createConnection();
