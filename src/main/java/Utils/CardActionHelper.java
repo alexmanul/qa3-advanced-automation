@@ -16,16 +16,16 @@ import static org.junit.Assert.assertTrue;
 
 public class CardActionHelper {
 
+    private final String CARD_DECK_API = "https://deckofcardsapi.com/api/deck/";
     private Response response;
     private String deckID;
     private int cardAmount;
     private int drawnCardAmount;
     private ValidatableResponse json;
     private RequestSpecification request;
-    private final String CARD_DECK_API = "https://deckofcardsapi.com/api/deck";
 
     public void shuffleDeck() {
-        response = given().get(CARD_DECK_API + "/new/shuffle/?deck_count=1");
+        response = given().get(CARD_DECK_API + "new/shuffle/?deck_count=1");
     }
 
     public void shuffleDeckValidation(String keyword) {
@@ -44,7 +44,7 @@ public class CardActionHelper {
     }
 
     public void drawCards(int cardCount) {
-        response = given().get(CARD_DECK_API + "/" + deckID + "/draw/?count=" + cardCount);
+        response = given().get(CARD_DECK_API + deckID + "/draw/?count=" + cardCount);
         setCardAmount();
         drawnCardAmount = cardCount;
     }

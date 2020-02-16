@@ -1,5 +1,5 @@
 @REST @SmokeTest
-Feature: QA3 - Advanced Automation. REST.
+Feature: QA3 - Advanced Automation. REST
 
   Scenario: REST02. Creates new, creates another deck and validates that decks are unique
     When I shuffle a deck
