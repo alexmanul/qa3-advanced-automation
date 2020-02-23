@@ -1,2 +1,24 @@
 # Project exclude paths
 /target/
+/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_5_1_0.xml
+/.idea/libraries/Maven__com_sun_activation_javax_activation_1_2_0.xml
+/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml
+/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml
+/.idea/libraries/Maven__com_sun_xml_messaging_saaj_saaj_impl_1_5_0.xml
+/.idea/libraries/Maven__com_sun_xml_stream_buffer_streambuffer_1_5_6.xml
+/.idea/libraries/Maven__com_sun_xml_ws_policy_2_7_5.xml
+/.idea/libraries/Maven__com_sun_xml_ws_rt_2_3_1.xml
+/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml
+/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml
+/.idea/libraries/Maven__javax_jws_javax_jws_api_1_1.xml
+/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml
+/.idea/libraries/Maven__javax_xml_soap_javax_xml_soap_api_1_4_0.xml
+/.idea/libraries/Maven__javax_xml_ws_jaxws_api_2_3_1.xml
+/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_4_1.xml
+/.idea/libraries/Maven__org_glassfish_external_management_api_3_0_0_b012.xml
+/.idea/libraries/Maven__org_glassfish_gmbal_gmbal_api_only_3_1_0_b001.xml
+/.idea/libraries/Maven__org_glassfish_ha_ha_api_3_1_9.xml
+/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml
+/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml
+/.idea/libraries/Maven__org_jvnet_mimepull_mimepull_1_9_10.xml
+/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml

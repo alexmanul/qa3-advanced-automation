@@ -48,14 +48,14 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- JUNIT -->
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.8.2</version>
-            <scope>compile</scope>
-        </dependency>
+        <!--        &lt;!&ndash; JUNIT &ndash;&gt;-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/junit/junit &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>junit</groupId>-->
+        <!--            <artifactId>junit</artifactId>-->
+        <!--            <version>4.8.2</version>-->
+        <!--            <scope>compile</scope>-->
+        <!--        </dependency>-->
 
         <!-- MYSQL CONNECTOR -->
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -184,6 +184,12 @@
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>rt</artifactId>
             <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>net.minidev</groupId>
+            <artifactId>json-smart</artifactId>
+            <version>1.1.1</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

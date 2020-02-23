@@ -1,4 +1,4 @@
-@REST
+@REST @SmokeTest
 Feature: QA3 - Advanced Automation. REST
 
 #  Task 1 – Simple validation

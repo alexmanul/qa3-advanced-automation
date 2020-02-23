@@ -1,4 +1,3 @@
-import Utils.RESTHelper;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import lombok.extern.log4j.Log4j;
 import org.apache.http.HttpResponse;
@@ -6,6 +5,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.junit.jupiter.api.Test;
+import utils.RESTHelper;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import javax.xml.soap.*;
 import java.io.ByteArrayInputStream;

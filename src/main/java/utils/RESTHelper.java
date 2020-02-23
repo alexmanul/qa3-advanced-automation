@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import org.apache.http.HttpResponse;
 
@@ -15,4 +15,5 @@ public class RESTHelper {
         scanner.close();
         return responseString;
     }
+
 }
