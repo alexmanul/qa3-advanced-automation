@@ -48,14 +48,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <!--        &lt;!&ndash; JUNIT &ndash;&gt;-->
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/junit/junit &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>junit</groupId>-->
-        <!--            <artifactId>junit</artifactId>-->
-        <!--            <version>4.8.2</version>-->
-        <!--            <scope>compile</scope>-->
-        <!--        </dependency>-->
 
         <!-- MYSQL CONNECTOR -->
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -100,11 +92,14 @@
             <artifactId>gherkin</artifactId>
             <version>5.0.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
-            <version>5.0.0</version>
+            <version>5.4.1</version>
+            <scope>test</scope>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/io.cucumber/datatable-dependencies -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -192,13 +187,13 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- APPIUM -->
-        <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>7.3.0</version>
-        </dependency>
+        <!--        &lt;!&ndash; APPIUM &ndash;&gt;-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.appium/java-client &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.appium</groupId>-->
+        <!--            <artifactId>java-client</artifactId>-->
+        <!--            <version>7.3.0</version>-->
+        <!--        </dependency>-->
 
         <!-- SELENIUM -->
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->

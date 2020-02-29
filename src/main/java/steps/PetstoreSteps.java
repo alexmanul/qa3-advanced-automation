@@ -1,4 +1,4 @@
-package steps;
+package Steps;
 
 import Utils.TestProperties;
 import gherkin.deps.com.google.gson.JsonObject;
