@@ -173,7 +173,7 @@
             <version>3.0.0-M2</version>
         </dependency>
 
-        <!--SOAP -->
+        <!-- SOAP -->
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>jaxws-rt</artifactId>
@@ -190,6 +190,22 @@
             <artifactId>json-smart</artifactId>
             <version>1.1.1</version>
             <scope>compile</scope>
+        </dependency>
+
+        <!-- APPIUM -->
+        <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>7.3.0</version>
+        </dependency>
+
+        <!-- SELENIUM -->
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
         </dependency>
 
     </dependencies>
