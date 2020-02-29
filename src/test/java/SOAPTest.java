@@ -1,6 +1,6 @@
+import Utils.SOAPHelper;
 import lombok.extern.log4j.Log4j;
 import org.junit.Test;
-import utils.SOAPHelper;
 
 @Log4j
 public class SOAPTest {

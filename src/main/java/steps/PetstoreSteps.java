@@ -1,5 +1,6 @@
 package steps;
 
+import Utils.TestProperties;
 import gherkin.deps.com.google.gson.JsonObject;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -10,7 +11,6 @@ import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 import lombok.extern.log4j.Log4j;
 import org.junit.Assert;
-import utils.TestProperties;
 
 import java.util.List;
 import java.util.Map;

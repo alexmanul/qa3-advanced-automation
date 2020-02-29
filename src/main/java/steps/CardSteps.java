@@ -1,7 +1,7 @@
-package steps;
+package Steps;
 
 import io.cucumber.java.en.And;
-import utils.CardActionHelper;
+import Utils.CardActionHelper;
 
 public class CardSteps {
 

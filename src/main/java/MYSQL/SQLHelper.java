@@ -1,8 +1,8 @@
 package MYSQL;
 
+import Utils.TestProperties;
 import lombok.extern.log4j.Log4j;
 import org.apache.ibatis.jdbc.ScriptRunner;
-import utils.TestProperties;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

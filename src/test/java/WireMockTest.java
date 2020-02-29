@@ -5,7 +5,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.junit.jupiter.api.Test;
-import utils.RESTHelper;
+import Utils.RESTHelper;
 
 import java.io.IOException;
 
