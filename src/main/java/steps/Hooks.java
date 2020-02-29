@@ -1,4 +1,4 @@
-package Steps;
+package steps;
 
 import MYSQL.SQLHelper;
 import cucumber.api.CucumberOptions;

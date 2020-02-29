@@ -1,9 +1,10 @@
-package Utils;
+package utils;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+import org.junit.Assert;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +31,7 @@ public class CardActionHelper {
 
     public void shuffleDeckValidation(String keyword) {
         if ("is unique".equals(keyword)) {
-//            Assert.assertNotEquals(deckID, getCurrentDeckID());
+            Assert.assertNotSame(deckID, getCurrentDeckID());
         } else {
             response.then()
                     .statusCode(200)
