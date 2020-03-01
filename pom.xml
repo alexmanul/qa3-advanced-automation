@@ -187,20 +187,34 @@
             <scope>compile</scope>
         </dependency>
 
-        <!--        &lt;!&ndash; APPIUM &ndash;&gt;-->
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.appium/java-client &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>io.appium</groupId>-->
-        <!--            <artifactId>java-client</artifactId>-->
-        <!--            <version>7.3.0</version>-->
-        <!--        </dependency>-->
+        <!-- APPIUM -->
+        <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>7.3.0</version>
+        </dependency>
 
         <!-- SELENIUM -->
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-java</artifactId>-->
+<!--            <version>3.141.59</version>-->
+<!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.0-alpha1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.0-alpha1</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

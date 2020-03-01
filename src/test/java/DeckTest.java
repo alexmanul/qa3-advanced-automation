@@ -1,7 +1,7 @@
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import lombok.extern.log4j.Log4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +32,6 @@ public class DeckTest {
     public void TEST_REST_02() {
         String deckID = shuffleResponse.jsonPath().getString("deck_id");
         String path = "https://deckofcardsapi.com/api/deck/" + deckID + "/draw/?count=1";
-        log.info(path);
 
         Response response = get(path);
         response.then().statusCode(200);
