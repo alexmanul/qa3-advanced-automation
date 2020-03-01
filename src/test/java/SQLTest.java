@@ -1,8 +1,9 @@
 import MYSQL.SQLHelper;
 import lombok.extern.log4j.Log4j;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 
 import java.io.IOException;
 import java.sql.*;
@@ -16,13 +17,13 @@ public class SQLTest {
     final String password = "123456";
     final SQLHelper sqlHelper = new SQLHelper();
 
-    @BeforeEach
+    @Before
     public void createDBTableAgents() throws IOException, SQLException {
         sqlHelper.readSQLFromFile();
         log.info("Database table 'AGENTS' is created");
     }
 
-    @AfterEach
+    @After
     public void dropDBTableAgents() throws IOException, SQLException {
         String query = "DROP TABLE AGENTS";
         Connection connection = sqlHelper.createConnection();
