@@ -49,4 +49,17 @@ public class SOAPHelper {
         }
     }
 
+    public String createSoapMessage(int a, int b) {
+        return "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\n" +
+                "   <soapenv:Header/>\n" +
+                "   <soapenv:Body>\n" +
+                "      <tem:Add>\n" +
+                "         <tem:intA>" + a + "</tem:intA>\n" +
+                "         <tem:intB>" + b + "</tem:intB>\n" +
+                "      </tem:Add>\n" +
+                "   </soapenv:Body>\n" +
+                "</soapenv:Envelope>";
+
+    }
+
 }
